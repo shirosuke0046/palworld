@@ -28,14 +28,6 @@ func doShowSettingsPre(_ context.Context, cmd *cli.Command) error {
 
 	cmd.Metadata["config"] = cfg
 
-	printType := cmd.String("output")
-	switch printType {
-	case "table":
-	case "json":
-	default:
-		return fmt.Errorf("unknown output mode '%s': choose 'table' or 'json'", printType)
-	}
-
 	return nil
 }
 
@@ -170,6 +162,16 @@ var showSettingsCommand = &cli.Command{
 			Name:    "output",
 			Aliases: []string{"o"},
 			Value:   "table",
+			Validator: func(v string) error {
+				switch v {
+				case "table":
+				case "json":
+				default:
+					return fmt.Errorf("unknown output mode \"%s\": choose from \"table\" or \"json\"", v)
+				}
+
+				return nil
+			},
 		},
 	},
 	Before: doShowSettingsPre,
