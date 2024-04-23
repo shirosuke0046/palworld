@@ -18,7 +18,8 @@ func doPrintConfigTemplate(_ context.Context, _ *cli.Command) error {
 }
 
 var printConfigTemplateCommand = &cli.Command{
-	Name:   "print-config-template",
-	Usage:  "Print config template",
-	Action: doPrintConfigTemplate,
+	Name:      "print-config-template",
+	Usage:     "Print config template",
+	UsageText: "palworld-manager print-config-template",
+	Action:    doPrintConfigTemplate,
 }

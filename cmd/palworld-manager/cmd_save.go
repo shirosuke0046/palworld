@@ -49,6 +49,7 @@ var saveCommand = &cli.Command{
 	Flags: []cli.Flag{
 		&cli.StringFlag{
 			Name:    "config",
+			Usage:   "specify the configration file",
 			Aliases: []string{"c"},
 			Value:   "",
 		},

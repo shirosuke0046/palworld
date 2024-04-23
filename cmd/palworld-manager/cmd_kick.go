@@ -87,21 +87,25 @@ func doKick(ctx context.Context, cmd *cli.Command) error {
 var kickCommand = &cli.Command{
 	Name:      "kick",
 	Usage:     "Kick the specified logged-in player",
-	UsageText: "palworld-manager kick [options] -u USER",
+	UsageText: "palworld-manager kick [options] -u USER_ID",
 	Flags: []cli.Flag{
 		&cli.StringFlag{
 			Name:    "config",
+			Usage:   "specify the configration file",
 			Aliases: []string{"c"},
 			Value:   "",
 		},
 		&cli.StringFlag{
 			Name:     "user-id",
+			Category: "REQUIRED",
+			Usage:    "specify the user id of the player you want to kick",
 			Aliases:  []string{"u"},
 			Value:    "",
 			Required: true,
 		},
 		&cli.BoolFlag{
 			Name:    "yes",
+			Usage:   "skip confirmation if flagged",
 			Aliases: []string{"y"},
 			Value:   false,
 		},

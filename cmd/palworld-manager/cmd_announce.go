@@ -51,11 +51,14 @@ var announceCommand = &cli.Command{
 	Flags: []cli.Flag{
 		&cli.StringFlag{
 			Name:    "config",
+			Usage:   "specify the configration file",
 			Aliases: []string{"c"},
 			Value:   "",
 		},
 		&cli.StringFlag{
 			Name:     "message",
+			Category: "REQUIRED",
+			Usage:    "a message to the logged-in players",
 			Aliases:  []string{"m"},
 			Value:    "",
 			Required: true,

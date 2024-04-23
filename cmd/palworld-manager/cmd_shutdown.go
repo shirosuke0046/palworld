@@ -28,11 +28,6 @@ func doShutdownPre(_ context.Context, cmd *cli.Command) error {
 
 	cmd.Metadata["config"] = cfg
 
-	waitTime := cmd.Int("second")
-	if waitTime < 1 {
-		return fmt.Errorf("invalid value for 'second' - must be a positive integer")
-	}
-
 	return nil
 }
 
@@ -80,21 +75,31 @@ var shutdownCommand = &cli.Command{
 	Flags: []cli.Flag{
 		&cli.StringFlag{
 			Name:    "config",
+			Usage:   "specify the configration file",
 			Aliases: []string{"c"},
 			Value:   "",
 		},
 		&cli.StringFlag{
 			Name:    "message",
+			Usage:   "a message to the logged-in players",
 			Aliases: []string{"m"},
 			Value:   "This server will shutdown in 600 seconds.",
 		},
 		&cli.IntFlag{
 			Name:    "second",
+			Usage:   "seconds until shutdown",
 			Aliases: []string{"s"},
 			Value:   600,
+			Validator: func(v int64) error {
+				if v < 1 {
+					return fmt.Errorf("must be a positive integer")
+				}
+				return nil
+			},
 		},
 		&cli.BoolFlag{
 			Name:    "yes",
+			Usage:   "skip confirmation if flagged",
 			Aliases: []string{"y"},
 			Value:   false,
 		},
