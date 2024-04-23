@@ -12,6 +12,7 @@ var rootCommand = &cli.Command{
 		announceCommand,
 		forceStopCommand,
 		kickCommand,
+		printConfigTemplateCommand,
 		saveCommand,
 		showInformationCommand,
 		showMetricsCommand,
