@@ -65,7 +65,9 @@ Q:
 }
 
 var forceStopCommand = &cli.Command{
-	Name: "force-stop",
+	Name:      "force-stop",
+	Usage:     "Force stop the palworld server (not recommended)",
+	UsageText: "palworld-manager force-stop [options]",
 	Flags: []cli.Flag{
 		&cli.StringFlag{
 			Name:    "config",

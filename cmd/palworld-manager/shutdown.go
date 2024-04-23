@@ -74,7 +74,9 @@ func doShutdown(ctx context.Context, cmd *cli.Command) error {
 }
 
 var shutdownCommand = &cli.Command{
-	Name: "shutdown",
+	Name:      "shutdown",
+	Usage:     "Shutdown the palworld server",
+	UsageText: "palworld-manager shutdown [options]",
 	Flags: []cli.Flag{
 		&cli.StringFlag{
 			Name:    "config",

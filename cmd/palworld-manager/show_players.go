@@ -104,6 +104,7 @@ func doShowPlayers(ctx context.Context, cmd *cli.Command) error {
 
 var showPlayersCommand = &cli.Command{
 	Name:      "show-players",
+	Usage:     "Show list of the logged-in players",
 	UsageText: "palworld-manager show-players [options]",
 	Flags: []cli.Flag{
 		&cli.StringFlag{

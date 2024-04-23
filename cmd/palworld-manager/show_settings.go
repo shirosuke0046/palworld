@@ -157,6 +157,7 @@ func doShowSettings(_ context.Context, cmd *cli.Command) error {
 
 var showSettingsCommand = &cli.Command{
 	Name:      "show-settings",
+	Usage:     "Show settings of the palworld server",
 	UsageText: "palworld-manager show-settings [options]",
 	Flags: []cli.Flag{
 		&cli.StringFlag{

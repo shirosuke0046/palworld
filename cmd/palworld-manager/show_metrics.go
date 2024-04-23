@@ -100,6 +100,7 @@ func doShowMetrics(_ context.Context, cmd *cli.Command) error {
 
 var showMetricsCommand = &cli.Command{
 	Name:      "show-metrics",
+	Usage:     "Show metrics of the palworld server",
 	UsageText: "palworld-manager show-metrics [options]",
 	Flags: []cli.Flag{
 		&cli.StringFlag{

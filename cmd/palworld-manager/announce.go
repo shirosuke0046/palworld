@@ -46,6 +46,7 @@ func doAnnounce(_ context.Context, cmd *cli.Command) error {
 
 var announceCommand = &cli.Command{
 	Name:      "announce",
+	Usage:     "Announce the message to logged-in players",
 	UsageText: "palworld-manager announce [options] -m MESSAGE",
 	Flags: []cli.Flag{
 		&cli.StringFlag{

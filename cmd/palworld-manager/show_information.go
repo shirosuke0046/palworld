@@ -94,6 +94,7 @@ func doShowInformation(_ context.Context, cmd *cli.Command) error {
 
 var showInformationCommand = &cli.Command{
 	Name:      "show-information",
+	Usage:     "Show the palworld server information",
 	UsageText: "palworld-manager show-information [options]",
 	Flags: []cli.Flag{
 		&cli.StringFlag{

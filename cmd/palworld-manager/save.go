@@ -43,7 +43,9 @@ func doSave(ctx context.Context, cmd *cli.Command) error {
 }
 
 var saveCommand = &cli.Command{
-	Name: "save",
+	Name:      "save",
+	Usage:     "Save the palworld server data",
+	UsageText: "palworld-manager save [options]",
 	Flags: []cli.Flag{
 		&cli.StringFlag{
 			Name:    "config",
