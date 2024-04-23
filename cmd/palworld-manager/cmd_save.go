@@ -8,7 +8,7 @@ import (
 	"github.com/urfave/cli/v3"
 )
 
-func doSavePre(ctx context.Context, cmd *cli.Command) error {
+func doSavePre(_ context.Context, cmd *cli.Command) error {
 	cfgFile := cmd.String("config")
 	if cfgFile == "" {
 		f, err := defaultConfigFile()
@@ -28,7 +28,7 @@ func doSavePre(ctx context.Context, cmd *cli.Command) error {
 	return nil
 }
 
-func doSave(ctx context.Context, cmd *cli.Command) error {
+func doSave(_ context.Context, cmd *cli.Command) error {
 	cfg := cmd.Metadata["config"].(*config)
 	client := palworld.New(cfg.BaseURL, cfg.Password)
 

@@ -31,7 +31,7 @@ func doShutdownPre(_ context.Context, cmd *cli.Command) error {
 	return nil
 }
 
-func doShutdown(ctx context.Context, cmd *cli.Command) error {
+func doShutdown(_ context.Context, cmd *cli.Command) error {
 	cfg := cmd.Metadata["config"].(*config)
 	client := palworld.New(cfg.BaseURL, cfg.Password)
 

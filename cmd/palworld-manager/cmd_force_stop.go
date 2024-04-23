@@ -31,7 +31,7 @@ func doForceStopPre(_ context.Context, cmd *cli.Command) error {
 	return nil
 }
 
-func doForceStop(ctx context.Context, cmd *cli.Command) error {
+func doForceStop(_ context.Context, cmd *cli.Command) error {
 	cfg := cmd.Metadata["config"].(*config)
 	client := palworld.New(cfg.BaseURL, cfg.Password)
 

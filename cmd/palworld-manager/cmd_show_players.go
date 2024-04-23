@@ -72,7 +72,7 @@ func printPlayersTable(players *palworld.Players) {
 	t.Render()
 }
 
-func doShowPlayers(ctx context.Context, cmd *cli.Command) error {
+func doShowPlayers(_ context.Context, cmd *cli.Command) error {
 	cfg := cmd.Metadata["config"].(*config)
 	client := palworld.New(cfg.BaseURL, cfg.Password)
 

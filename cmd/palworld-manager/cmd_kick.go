@@ -11,7 +11,7 @@ import (
 	"github.com/urfave/cli/v3"
 )
 
-func doKickPre(ctx context.Context, cmd *cli.Command) error {
+func doKickPre(_ context.Context, cmd *cli.Command) error {
 	cfgFile := cmd.String("config")
 	if cfgFile == "" {
 		f, err := defaultConfigFile()
@@ -31,7 +31,7 @@ func doKickPre(ctx context.Context, cmd *cli.Command) error {
 	return nil
 }
 
-func doKick(ctx context.Context, cmd *cli.Command) error {
+func doKick(_ context.Context, cmd *cli.Command) error {
 	cfg := cmd.Metadata["config"].(*config)
 	client := palworld.New(cfg.BaseURL, cfg.Password)
 
