@@ -3,6 +3,7 @@
 #
 # Binaries for programs and plugins
 bin/
+goxz/
 *.exe
 *.exe~
 *.dll
