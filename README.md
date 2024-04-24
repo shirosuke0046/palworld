@@ -1,5 +1,11 @@
 # palworld
 
+A Go library of REST API for the Palworld Dedicated Server.
+
+## palworld-manager
+
+A CLI tool for the Palworld Dedicated Server by REST API.
+
 ```
 NAME:
    palworld-manager - Palworld REST API client for CLI
